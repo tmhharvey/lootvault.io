@@ -4,6 +4,7 @@ const User = require("../models/user");
 
 // PUT Example
 router.put("/newUserEmail", async (req, res) => {
+  console.log("ROUTE WAS FIRED");
   const userDbEntry = {};
   userDbEntry.userId =
     req.body.email + (Math.floor(Math.random() * 1000000) + 1);

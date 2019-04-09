@@ -35,7 +35,7 @@ app.use("/data", dataController);
 const userController = require("./controllers/userController");
 app.use("/user", userController);
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 9000;
 
 // ... other app.use middleware
 app.use(express.static(path.join(__dirname, "client", "build")));
@@ -46,5 +46,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("listening on port 8000");
+  console.log("listening on port:" + port);
 });

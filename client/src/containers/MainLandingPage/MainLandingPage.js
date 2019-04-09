@@ -39,7 +39,7 @@ class MainLandingPage extends Component {
 
     try {
       const submitDemo = await fetch(
-        `http://localhost:8000/user/newUserEmail`,
+        `http://localhost:9000/user/newUserEmail`,
         {
           method: "PUT",
           body: JSON.stringify(request),
