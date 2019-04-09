@@ -38,16 +38,13 @@ class MainLandingPage extends Component {
     console.log(request);
 
     try {
-      const submitDemo = await fetch(
-        "http://localhost:9000/user/newUserEmail",
-        {
-          method: "PUT",
-          body: JSON.stringify(request),
-          headers: {
-            "Content-Type": "application/json"
-          }
+      const submitDemo = await fetch(`${process.env.PORT}/user/newUserEmail`, {
+        method: "PUT",
+        body: JSON.stringify(request),
+        headers: {
+          "Content-Type": "application/json"
         }
-      );
+      });
     } catch (err) {
       console.log(err);
     }
