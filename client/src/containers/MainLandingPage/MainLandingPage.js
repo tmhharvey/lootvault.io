@@ -38,8 +38,8 @@ class MainLandingPage extends Component {
     console.log(request);
 
     try {
-      const submitDemo = await fetch(
-        `https://sheltered-shore-66853.herokuapp.com/user/newUserEmail`,
+      const createUderEmail = await fetch(
+        `${process.env.REACT_APP_BACKEND}user/newUserEmail`,
         {
           method: "PUT",
           body: JSON.stringify(request),
