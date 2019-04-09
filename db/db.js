@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/loot-vault", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/loot-vault", {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false

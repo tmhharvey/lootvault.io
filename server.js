@@ -5,6 +5,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const session = require("express-session");
 const path = require("path");
+const dotenv = require("dotenv").config();
+
+// ... other app.use middleware
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 // app.use(
 //   session({
@@ -35,10 +39,13 @@ app.use("/data", dataController);
 const userController = require("./controllers/userController");
 app.use("/user", userController);
 
+// Right before your app.listen(), add this:
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/loot-vault/build/index.html"));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-app.listen(process.env.PORT || 8000, () => {
+const port = process.env.PORT || 8000;
+
+app.listen(port, () => {
   console.log("listening on port 8000");
 });
