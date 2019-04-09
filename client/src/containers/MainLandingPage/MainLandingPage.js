@@ -35,17 +35,19 @@ class MainLandingPage extends Component {
     const request = {
       email: this.state.email
     };
-    let url = process.env.MONGODB_URI
-      ? `${process.env.MONGODB_URI}/user/newUserEmail`
-      : `http://localhost:9000/user/newUserEmail`;
+    console.log(request);
+
     try {
-      const submitDemo = await fetch(url, {
-        method: "PUT",
-        body: JSON.stringify(request),
-        headers: {
-          "Content-Type": "application/json"
+      const submitDemo = await fetch(
+        "http://localhost:9000/user/newUserEmail",
+        {
+          method: "PUT",
+          body: JSON.stringify(request),
+          headers: {
+            "Content-Type": "application/json"
+          }
         }
-      });
+      );
     } catch (err) {
       console.log(err);
     }
