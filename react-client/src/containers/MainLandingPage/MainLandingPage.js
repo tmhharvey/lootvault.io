@@ -10,7 +10,49 @@ Container.propTypes = {
 };
 
 class MainLandingPage extends Component {
-  state = {};
+  state = {
+    email: ""
+  };
+
+  handleInputChange = event => {
+    const target = event.currentTarget;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+    this.setState(
+      {
+        [name]: value
+      },
+      () => {
+        // console.log("state is now:" + JSON.stringify(this.state));
+      }
+    );
+  };
+
+  submitHandler = async e => {
+    e.preventDefault();
+
+    // API request
+    const request = {
+      email: this.state.email
+    };
+    console.log(request);
+
+    try {
+      const submitDemo = await fetch(
+        `http://localhost:8000/user/newUserEmail`,
+        {
+          method: "PUT",
+          body: JSON.stringify(request),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   render() {
     return (
       <div className="landingPage">
@@ -23,12 +65,18 @@ class MainLandingPage extends Component {
             Your geeky, awesome friend that sends you an email each week with
             all the Indie Gaming news you would want to know.
           </p>
-          <form>
-            <h4>sign up today and climb aboard our growing pirate ship</h4>
+          <form onSubmit={this.submitHandler}>
+            <h4>sign up today and beam aboard our growing space ship</h4>
             <input
               type="text"
-              name="emailAddress"
-              value="Enter Your Email Address"
+              name="email"
+              onChange={this.handleInputChange}
+              className="demoSurvey__titleInput"
+            />
+            <input
+              type="submit"
+              value="Submit"
+              className="demoSurvey__button"
             />
           </form>
         </div>

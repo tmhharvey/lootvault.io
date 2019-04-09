@@ -3,9 +3,22 @@ const router = express.Router();
 const User = require("../models/user");
 
 // PUT Example
-router.put("/:userid/exampleURL", async (req, res) => {
+router.put("/newUserEmail", async (req, res) => {
+  const userDbEntry = {};
+  userDbEntry.userId =
+    req.body.email + (Math.floor(Math.random() * 1000000) + 1);
+  userDbEntry.email = req.body.email;
+
   try {
-    //Logic
+    const user = await User.create(userDbEntry);
+
+    res.json({
+      status: 200,
+      data: {
+        userId: user.newUserId,
+        email: user.userEmail
+      }
+    });
   } catch (err) {
     console.log(err);
     res.send(err);
