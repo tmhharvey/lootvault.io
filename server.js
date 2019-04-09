@@ -7,9 +7,6 @@ const session = require("express-session");
 const path = require("path");
 const dotenv = require("dotenv").config();
 
-// ... other app.use middleware
-app.use(express.static(path.join(__dirname, "client", "build")));
-
 // app.use(
 //   session({
 //     secret: "keyboard cat",
@@ -20,7 +17,6 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "loot-vault/build")));
 
 const corsOptions = {
   origin: `http://localhost:3000`,
@@ -39,12 +35,15 @@ app.use("/data", dataController);
 const userController = require("./controllers/userController");
 app.use("/user", userController);
 
+const port = process.env.PORT || 8000;
+
+// ... other app.use middleware
+app.use(express.static(path.join(__dirname, "client", "build")));
+
 // Right before your app.listen(), add this:
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
-
-const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
   console.log("listening on port 8000");
