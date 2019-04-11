@@ -56,16 +56,13 @@ class MainLandingPage extends Component {
     console.log(request);
 
     try {
-      const createUderEmail = await fetch(
-        process.env.REACT_APP_BACKEND + `user/newUserEmail`,
-        {
-          method: "PUT",
-          body: JSON.stringify(request),
-          headers: {
-            "Content-Type": "application/json"
-          }
+      await fetch(process.env.REACT_APP_BACKEND + `user/newUserEmail`, {
+        method: "PUT",
+        body: JSON.stringify(request),
+        headers: {
+          "Content-Type": "application/json"
         }
-      );
+      });
     } catch (err) {
       console.log(err);
     }
@@ -101,7 +98,7 @@ class MainLandingPage extends Component {
                 pathname: "/"
               }}
             >
-              <img src={landingPageLogo} />
+              <img src={landingPageLogo} alt="logo" />
             </Link>
           </div>
           <Route
@@ -143,7 +140,7 @@ class MainLandingPage extends Component {
                       <div className="landingPage__giveawayContainer--card--image">
                         <img
                           src={giveawayImage1}
-                          alt="venue image"
+                          alt="giveaways"
                           className="image-responsive"
                           onMouseOver={() => {
                             this.playAudioHover();
@@ -160,7 +157,7 @@ class MainLandingPage extends Component {
                       <div className="landingPage__giveawayContainer--card--image">
                         <img
                           src={giveawayImage1}
-                          alt="venue image"
+                          alt="giveaways"
                           className="image-responsive"
                           onMouseOver={() => {
                             this.playAudioHover();
@@ -177,7 +174,7 @@ class MainLandingPage extends Component {
                       <div className="landingPage__giveawayContainer--card--image">
                         <img
                           src={giveawayImage3}
-                          alt="venue image"
+                          alt="giveaways"
                           className="image-responsive"
                           onMouseOver={() => {
                             this.playAudioHover();
@@ -194,7 +191,7 @@ class MainLandingPage extends Component {
                       <div className="landingPage__giveawayContainer--card--image">
                         <img
                           src={giveawayImage1}
-                          alt="venue image"
+                          alt="giveaways"
                           className="image-responsive"
                           onMouseOver={() => {
                             this.playAudioHover();
@@ -211,7 +208,7 @@ class MainLandingPage extends Component {
                       <div className="landingPage__giveawayContainer--card--image">
                         <img
                           src={giveawayImage1}
-                          alt="venue image"
+                          alt="giveaways"
                           className="image-responsive"
                           onMouseOver={() => {
                             this.playAudioHover();
@@ -228,7 +225,7 @@ class MainLandingPage extends Component {
                       <div className="landingPage__giveawayContainer--card--image">
                         <img
                           src={giveawayImage3}
-                          alt="venue image"
+                          alt="giveaways"
                           className="image-responsive"
                           onMouseOver={() => {
                             this.playAudioHover();
@@ -241,44 +238,44 @@ class MainLandingPage extends Component {
                     </div>
                   </Col>
                 </Row>
-                <footer class="footer">
-                  <div class="footer__logo-box text-center">
+                <footer className="footer">
+                  <div className="footer__logo-box text-center">
                     <img
                       src={landingPageLogo}
                       alt=" Full logo"
-                      class="footer__logo"
+                      className="footer__logo"
                     />
                   </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="footer__navigation">
-                        <ul class="footer__list">
-                          <li class="footer__item">
-                            <a href="/" class="footer__link">
+                  <div className="row">
+                    <div className="col-sm-6">
+                      <div className="footer__navigation">
+                        <ul className="footer__list">
+                          <li className="footer__item">
+                            <a href="/" className="footer__link">
                               Home
                             </a>
                           </li>
-                          <li class="footer__item">
-                            <a href="/giveaways" class="footer__link">
+                          <li className="footer__item">
+                            <a href="/giveaways" className="footer__link">
                               Giveaways
                             </a>
                           </li>
-                          <li class="footer__item">
-                            <a href="/promotions" class="footer__link">
+                          <li className="footer__item">
+                            <a href="/promotions" className="footer__link">
                               Promotions
                             </a>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="col-sm-6">
-                      <p class="footer__copyright">
+                    <div className="col-sm-6">
+                      <p className="footer__copyright">
                         Built with{" "}
-                        <a href="" class="footer__link">
+                        <a href="/" className="footer__link">
                           love
                         </a>{" "}
                         for all of the{" "}
-                        <a href="#" class="footer__link">
+                        <a href="/" className="footer__link">
                           Indie Games, developers, and geeks{" "}
                         </a>{" "}
                         out there. Copyright @ 2019 Loot Vault Inc.
@@ -296,22 +293,22 @@ class MainLandingPage extends Component {
               <>
                 <div className="landingPage__promotions">
                   <div className="landingPage__promotions__header">
-                    <div class="landingPage__promotions__header--text-box">
+                    <div className="landingPage__promotions__header--text-box">
                       <h1>Over 1 Million Indie Gamers</h1>
                       <h2>Ready to see and play your game</h2>
                     </div>
                   </div>
 
-                  <section class="landingPage__promotions__features">
+                  <section className="landingPage__promotions__features">
                     <Row>
                       <Col lg="1" />
                       <Col lg="10">
                         <Row>
                           <Col lg="4">
-                            <div class="landingPage__promotions__features--box">
-                              <i class="fas fa-funnel-dollar landingPage__promotions__features--box__icon" />
+                            <div className="landingPage__promotions__features--box">
+                              <i className="fas fa-funnel-dollar landingPage__promotions__features--box__icon" />
                               <h3>Crowdfunding Experts</h3>
-                              <p class="landingPage__promotions__features--box__text">
+                              <p className="landingPage__promotions__features--box__text">
                                 Combined, our team has over 50 years+ of
                                 experience in Kickstarter and Indiegogo
                                 Campaigns, Steam Promotion, and Email List
@@ -320,10 +317,10 @@ class MainLandingPage extends Component {
                             </div>
                           </Col>
                           <Col lg="4">
-                            <div class="landingPage__promotions__features--box">
-                              <i class="fas fa-users landingPage__promotions__features--box__icon" />
+                            <div className="landingPage__promotions__features--box">
+                              <i className="fas fa-users landingPage__promotions__features--box__icon" />
                               <h3>Next Level Exposure</h3>
-                              <p class="landingPage__promotions__features--box__text">
+                              <p className="landingPage__promotions__features--box__text">
                                 Take your exposure to the next level with our
                                 team of Crowdfunding, email marketing,
                                 influencer marketing, and promotional experts.
@@ -331,10 +328,10 @@ class MainLandingPage extends Component {
                             </div>
                           </Col>
                           <Col lg="4">
-                            <div class="landingPage__promotions__features--box">
-                              <i class="fas fa-gamepad landingPage__promotions__features--box__icon" />
+                            <div className="landingPage__promotions__features--box">
+                              <i className="fas fa-gamepad landingPage__promotions__features--box__icon" />
                               <h3>1 Million+ Gamers</h3>
-                              <p class="landingPage__promotions__features--box__text">
+                              <p className="landingPage__promotions__features--box__text">
                                 We have over 1 million gamers in our community
                                 who have actively opted in to seeing our Indie
                                 Game promotions. Let's get your game in front of
@@ -415,44 +412,44 @@ class MainLandingPage extends Component {
                     </div>
                   </section>
                 </div>
-                <footer class="footer">
-                  <div class="footer__logo-box text-center">
+                <footer className="footer">
+                  <div className="footer__logo-box text-center">
                     <img
                       src={landingPageLogo}
                       alt=" Full logo"
-                      class="footer__logo"
+                      className="footer__logo"
                     />
                   </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="footer__navigation">
-                        <ul class="footer__list">
-                          <li class="footer__item">
-                            <a href="/" class="footer__link">
+                  <div className="row">
+                    <div className="col-sm-6">
+                      <div className="footer__navigation">
+                        <ul className="footer__list">
+                          <li className="footer__item">
+                            <a href="/" className="footer__link">
                               Home
                             </a>
                           </li>
-                          <li class="footer__item">
-                            <a href="/giveaways" class="footer__link">
+                          <li className="footer__item">
+                            <a href="/giveaways" className="footer__link">
                               Giveaways
                             </a>
                           </li>
-                          <li class="footer__item">
-                            <a href="/promotions" class="footer__link">
+                          <li className="footer__item">
+                            <a href="/promotions" className="footer__link">
                               Promotions
                             </a>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="col-sm-6">
-                      <p class="footer__copyright">
+                    <div className="col-sm-6">
+                      <p className="footer__copyright">
                         Built with{" "}
-                        <a href="" class="footer__link">
+                        <a href="/" className="footer__link">
                           love
                         </a>{" "}
                         for all of the{" "}
-                        <a href="#" class="footer__link">
+                        <a href="/" className="footer__link">
                           Indie Games, developers, and geeks{" "}
                         </a>{" "}
                         out there. Copyright @ 2019 Loot Vault Inc.

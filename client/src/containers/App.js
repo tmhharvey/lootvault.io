@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import "./App.scss";
 import Layout from "./Layout/Layout.js";
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
+  // Collapse,
+  // Navbar,
+  // NavbarToggler,
+  // NavbarBrand,
+  // Nav,
+  // NavItem,
+  // NavLink,
   Container,
   Row,
-  Col,
-  Jumbotron,
-  Button
+  Col
+  // Jumbotron,
+  // Button
 } from "reactstrap";
 import { BrowserRouter } from "react-router-dom";
 import MainLandingPage from "./MainLandingPage/MainLandingPage";

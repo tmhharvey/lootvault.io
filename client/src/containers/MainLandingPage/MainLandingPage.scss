@@ -226,7 +226,7 @@
         transition: all 0.2s;
         box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
         margin: 0 2rem;
-        min-height: 25rem;
+        min-height: 30rem;
 
         @include responsive("tab-port") {
           margin-bottom: 5rem;
@@ -293,7 +293,7 @@
             rgba($color-white, 0.9) 64%,
             rgba(transparent, 0.05) 64%
           ),
-          url("../../assets/img/background5.jpg");
+          url("../../assets/img/background3.jpg");
       }
       @include responsive("tab-port") {
         background-image: linear-gradient(
@@ -301,7 +301,7 @@
             rgba($color-white, 0.9) 0%,
             rgba($color-white, 0.9) 100%
           ),
-          url("../../assets/img/background5.jpg");
+          url("../../assets/img/background3.jpg");
       }
 
       &__formMain {
