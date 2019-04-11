@@ -1,6 +1,8 @@
 @import "../../assets/sass/abstract/variables.scss";
+@import "../../assets/sass/base/base.scss";
 @import "../../assets/sass/abstract/mixins.scss";
 @import "../../assets/sass/components/buttons.scss";
+@import "../../assets/sass/components/form.scss";
 
 .landingPage {
   background-image: linear-gradient(
@@ -25,14 +27,10 @@
     &--buttons {
       color: $color-primary-light;
       display: inline-block;
-      padding: 0.4rem 1rem;
-      // background-image: linear-gradient(
-      //   to right bottom,
-      //   rgba($color-primary-dark, 0.7),
-      //   rgba($color-primary, 0.7)
-      // );
+      padding: 0.75rem 1.5rem;
+      font-size: 1.6rem;
       border: 3px outset $color-primary-light;
-      margin: 2rem 1.5rem 0 0;
+      margin: 2rem;
       border-radius: $default-border-radius;
       &:hover {
         background-color: $color-primary;
@@ -43,12 +41,12 @@
     }
   }
   &__logo {
-    width: 7rem;
+    width: 9rem;
     height: auto;
     padding: 0.5rem;
     position: absolute;
-    left: 0.5%;
-    top: 0.5%;
+    left: 1%;
+    top: 1%;
     & img {
       width: 100%;
       height: 100%;
@@ -56,47 +54,44 @@
   }
   &__content {
     color: $color-white;
-    width: 35rem;
-    padding: 1rem;
+    width: 50rem;
+    padding: 1.5rem;
     position: absolute;
     left: 5%;
     top: 45%;
-    @include responsive("phone") {
-      width: 30rem;
-    }
 
     & h1 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
+      font-size: 3rem;
+      margin-bottom: 1.4rem;
       font-style: italic;
     }
     & h4 {
-      font-size: 1rem;
+      font-size: 1.5rem;
       font-style: italic;
       font-weight: normal;
+      margin-bottom: 0.7rem;
     }
     & p {
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       font-weight: bold;
-      margin-bottom: 1.5rem;
-      @include responsive("phone") {
-        width: 25rem;
-      }
+      margin-bottom: 2rem;
     }
     & input {
-      width: 20rem;
+      width: 30rem;
       font-style: italic;
-      padding: 0.5rem;
+      padding: 0.75rem;
       display: inline-block;
+      font-size: 1.4rem;
     }
     &--submit {
       background-color: $color-primary-light;
       border: none;
       float: right;
-      width: 7rem !important;
-      padding: 0.63rem !important;
+      width: 9rem !important;
+      height: 4rem;
+      padding: 0.9rem !important;
       position: relative;
-      left: -18.4%;
+      left: -20%;
       color: $color-white;
       font-weight: 450;
       &:hover {
@@ -104,15 +99,23 @@
         color: $color-white;
         cursor: pointer;
       }
+      @include responsive("tab-land") {
+        padding: 0.95rem !important;
+      }
+      @include responsive("phone") {
+        padding: 1rem !important;
+      }
     }
   }
 
   &__giveawayContainer {
     padding: 0rem;
 
+    margin-bottom: 8rem;
+
     &--card {
       text-align: center;
-      margin: 3rem 0rem 0rem 0rem;
+      margin: 4rem 0rem 0rem 0rem;
       margin-top: 11rem;
 
       &--image {
@@ -120,7 +123,7 @@
 
         & img {
           width: 60%;
-          height: 35rem;
+          height: 45rem;
           box-shadow: 0px 0px 15px 1px $color-grey-dark-2;
           border-radius: 15px;
           border: outset 2px $color-grey-dark-2;
@@ -130,12 +133,12 @@
           }
 
           @include responsive("tab-land") {
-            height: 25rem;
+            height: 38rem;
             width: 75%;
           }
           @include responsive("phone") {
             width: 50%;
-            height: 25rem;
+            height: 35rem;
           }
           &:hover {
             cursor: pointer;
@@ -166,14 +169,15 @@
       background-position: top;
       clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
       position: relative;
-      margin-top: 2.5rem;
+      margin-top: 1rem;
 
       h1 {
         color: $color-white;
+        font-size: 3.5rem;
       }
 
       h2 {
-        font-size: 1.2rem;
+        font-size: 2rem;
         font-style: italic;
         color: darken($color-grey-light-1, 10%);
         margin-top: 1rem;
@@ -188,17 +192,17 @@
 
         &--button {
         }
-        @include responsive(phone) {
-          top: 40%;
+        @include responsive("phone") {
+          width: 100%;
         }
-        @include responsive(small-phone) {
+        @include responsive("small-phone") {
           top: 50%;
         }
       }
     }
     &__features {
       margin-top: -20vh;
-      padding: 20rem 0;
+      padding: 28rem 0;
       background-image: linear-gradient(
           to right bottom,
           rgba($color-off-white, 0.8),
@@ -208,23 +212,24 @@
       background-size: cover;
       background-position: bottom;
 
-      @include responsive(tab-port) {
+      @include responsive("tab-port") {
         // width < 900?
-        padding: 8rem 0;
+        padding: 12rem 0;
+        margin-top: -10vh;
       }
       &--box {
         background-color: rgba($color-off-white, 0.8);
-        font-size: 1.5rem;
-        padding: 2.5rem;
+        font-size: 2rem;
+        padding: 3rem;
         text-align: center;
         border-radius: $default-border-radius;
         transition: all 0.2s;
         box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
-        margin: 0 1.5rem;
-        min-height: 20rem;
+        margin: 0 2rem;
+        min-height: 25rem;
 
-        @include responsive(tab-port) {
-          margin-bottom: 4rem;
+        @include responsive("tab-port") {
+          margin-bottom: 5rem;
         }
 
         &:hover {
@@ -233,8 +238,8 @@
         }
 
         &__icon {
-          font-size: 6rem;
-          margin-bottom: 0.5rem;
+          font-size: 8rem;
+          margin-bottom: 1rem;
           display: inline-block;
           background-image: linear-gradient(
             to right,
@@ -254,20 +259,146 @@
         }
 
         &__text {
-          font-size: 1.2rem;
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .section-book {
+      padding: 18rem 18rem;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      );
+      @include responsive("phone") {
+        padding: 7rem 7rem;
+      }
+    }
+    .book {
+      background-image: linear-gradient(
+          105deg,
+          rgba($color-white, 0.9) 0%,
+          rgba($color-white, 0.9) 50%,
+          rgba(transparent, 0.05) 50%
+        ),
+        url("../../assets/img/background3.jpg");
+      background-size: cover;
+      background-position: bottom;
+      border-radius: $default-border-radius;
+      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+      @include responsive("tab-land") {
+        background-image: linear-gradient(
+            105deg,
+            rgba($color-white, 0.9) 0%,
+            rgba($color-white, 0.9) 64%,
+            rgba(transparent, 0.05) 64%
+          ),
+          url("../../assets/img/background5.jpg");
+      }
+      @include responsive("tab-port") {
+        background-image: linear-gradient(
+            to right,
+            rgba($color-white, 0.9) 0%,
+            rgba($color-white, 0.9) 100%
+          ),
+          url("../../assets/img/background5.jpg");
+      }
+
+      &__formMain {
+        width: 50%;
+        padding: 5rem 7rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+        & h2 {
+          font-weight: 900;
+          font-family: $default-font-family;
+        }
+        @include responsive("tab-land") {
+          // width < 900?
+          font-size: 1.4rem;
+          width: 64%;
+          padding: 3rem 5rem;
+        }
+        @include responsive("tab-port") {
+          // width < 900?
+          font-size: 1.4rem;
+          width: 100%;
+        }
+        @include responsive("phone") {
+          padding: 2rem;
         }
       }
     }
   }
 
-  footer {
-    width: 100%;
-    height: 5rem;
-    padding: 2rem 0rem;
-    margin-top: 10rem;
+  .footer {
     background-color: $color-black;
-    color: $color-grey-dark-2;
-    position: relative;
-    bottom: 0%;
+    padding: 5rem 10rem;
+    font-size: 1.4rem;
+
+    @include responsive("tab-port") {
+      padding: 8rem 0;
+    }
+
+    &__logo-box {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    &__logo {
+      width: 10rem;
+      height: auto;
+    }
+
+    &__navigation {
+      border-top: 1px solid $color-grey-dark;
+      padding-top: 2rem;
+      display: inline-block;
+      @include responsive("tab-port") {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    &__list {
+      list-style: none;
+    }
+
+    &__item {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+    }
+
+    &__link {
+      &:link,
+      &:visited {
+        color: $color-grey-light-1;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: inline-block;
+      }
+
+      &:hover,
+      &:active {
+        color: $color-primary;
+        box-shadow: 0 1.5rem 2rem rgba($color-black, 0.4);
+      }
+    }
+
+    &__copyright {
+      color: $color-grey-light-1;
+      border-top: 1px solid $color-grey-dark;
+      padding-top: 2rem;
+      display: inline-block;
+      width: 80%;
+      float: right;
+      @include responsive(tab-port) {
+        width: 100%;
+        text-align: center;
+        float: none;
+      }
+    }
   }
 }

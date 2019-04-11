@@ -1,4 +1,7 @@
-.btn {
+@import "../abstract/variables.scss";
+@import "../abstract/mixins.scss";
+
+.appBtn {
   &,
   &:link,
   &:visited {
@@ -41,9 +44,11 @@
     }
   }
 
-  &--green {
-    background-color: $color-primary;
+  &--primary {
+    background-color: $color-primary-light;
     color: $color-white;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
 
     &::after {
       background-color: $color-primary;

@@ -24,7 +24,7 @@ class MainLandingPage extends Component {
   };
 
   playAudioHover = () => {
-    menuSelectionAudio.volume = 0.6;
+    menuSelectionAudio.volume = 0.1;
     menuSelectionAudio.play();
   };
   playAudioClicked = () => {
@@ -120,7 +120,7 @@ class MainLandingPage extends Component {
                     type="text"
                     name="email"
                     onChange={this.handleInputChange}
-                    value="Enter your email address"
+                    placeholder="Enter your email address"
                   />
                   <input
                     type="submit"
@@ -241,7 +241,51 @@ class MainLandingPage extends Component {
                     </div>
                   </Col>
                 </Row>
-                <footer className="text-center">Copyright@ 2019</footer>
+                <footer class="footer">
+                  <div class="footer__logo-box text-center">
+                    <img
+                      src={landingPageLogo}
+                      alt=" Full logo"
+                      class="footer__logo"
+                    />
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="footer__navigation">
+                        <ul class="footer__list">
+                          <li class="footer__item">
+                            <a href="/" class="footer__link">
+                              Home
+                            </a>
+                          </li>
+                          <li class="footer__item">
+                            <a href="/giveaways" class="footer__link">
+                              Giveaways
+                            </a>
+                          </li>
+                          <li class="footer__item">
+                            <a href="/promotions" class="footer__link">
+                              Promotions
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="footer__copyright">
+                        Built with{" "}
+                        <a href="" class="footer__link">
+                          love
+                        </a>{" "}
+                        for all of the{" "}
+                        <a href="#" class="footer__link">
+                          Indie Games, developers, and geeks{" "}
+                        </a>{" "}
+                        out there. Copyright @ 2019 Loot Vault Inc.
+                      </p>
+                    </div>
+                  </div>
+                </footer>
               </>
             )}
           />
@@ -254,9 +298,7 @@ class MainLandingPage extends Component {
                   <div className="landingPage__promotions__header">
                     <div class="landingPage__promotions__header--text-box">
                       <h1>Over 1 Million Indie Gamers</h1>
-                      <h2>
-                        Kickstarter, Steam, Indiegogo, Email List, and more
-                      </h2>
+                      <h2>Ready to see and play your game</h2>
                     </div>
                   </div>
 
@@ -268,33 +310,35 @@ class MainLandingPage extends Component {
                           <Col lg="4">
                             <div class="landingPage__promotions__features--box">
                               <i class="fas fa-funnel-dollar landingPage__promotions__features--box__icon" />
-                              <h3>Kickstarter</h3>
+                              <h3>Crowdfunding Experts</h3>
                               <p class="landingPage__promotions__features--box__text">
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Dolor mdistinctio laudantium
-                                nostrum dolores dolorem debitis?
+                                Combined, our team has over 50 years+ of
+                                experience in Kickstarter and Indiegogo
+                                Campaigns, Steam Promotion, and Email List
+                                targeting.
                               </p>
                             </div>
                           </Col>
                           <Col lg="4">
                             <div class="landingPage__promotions__features--box">
                               <i class="fas fa-users landingPage__promotions__features--box__icon" />
-                              <h3>Expose Your Game</h3>
+                              <h3>Next Level Exposure</h3>
                               <p class="landingPage__promotions__features--box__text">
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Dolor mdistinctio laudantium
-                                nostrum dolores dolorem debitis?
+                                Take your exposure to the next level with our
+                                team of Crowdfunding, email marketing,
+                                influencer marketing, and promotional experts.
                               </p>
                             </div>
                           </Col>
                           <Col lg="4">
                             <div class="landingPage__promotions__features--box">
                               <i class="fas fa-gamepad landingPage__promotions__features--box__icon" />
-                              <h3>1 Million Gamers</h3>
+                              <h3>1 Million+ Gamers</h3>
                               <p class="landingPage__promotions__features--box__text">
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Dolor mdistinctio laudantium
-                                nostrum dolores dolorem debitis?
+                                We have over 1 million gamers in our community
+                                who have actively opted in to seeing our Indie
+                                Game promotions. Let's get your game in front of
+                                them.
                               </p>
                             </div>
                           </Col>
@@ -303,8 +347,119 @@ class MainLandingPage extends Component {
                       <Col lg="1" />
                     </Row>
                   </section>
+                  <section className="section-book">
+                    <div className="book">
+                      <div className="book__formMain">
+                        <form action="#" className="form">
+                          <div className="my-bottom-medium text-center">
+                            <h2>Schedule a Free Consultation</h2>
+                          </div>
+                          <div className="form__group">
+                            <input
+                              id="fullName"
+                              type="text"
+                              className="form__input"
+                              placeholder="Full Name"
+                              required
+                            />
+                            <label for="fullName" className="form__label">
+                              Full Name
+                            </label>
+                          </div>
+                          <div className="form__group">
+                            <input
+                              id="email"
+                              type="email"
+                              className="form__input"
+                              placeholder="Email address"
+                              required
+                            />
+                            <label for="email" className="form__label">
+                              Email address
+                            </label>
+                          </div>
+                          <div className="form-group">
+                            <div className="form__radio-group">
+                              <input
+                                type="radio"
+                                className="form__radio-input"
+                                id="small"
+                                name="size"
+                              />
+                              <label for="small" className="form__radio-label">
+                                <span className="form__radio-button"> </span>{" "}
+                                Crowdfunding
+                              </label>
+                            </div>
+
+                            <div className="form__radio-group">
+                              <input
+                                type="radio"
+                                className="form__radio-input"
+                                id="large"
+                                name="size"
+                              />
+                              <label for="large" className="form__radio-label">
+                                <span className="form__radio-button"> </span>
+                                Promotion
+                              </label>
+                            </div>
+                          </div>
+                          <div className="form-group">
+                            <button className="appBtn appBtn--primary appBtn--animated">
+                              Next Step &rarr;
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </section>
                 </div>
-                <footer className="text-center">Copyright@ 2019</footer>
+                <footer class="footer">
+                  <div class="footer__logo-box text-center">
+                    <img
+                      src={landingPageLogo}
+                      alt=" Full logo"
+                      class="footer__logo"
+                    />
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="footer__navigation">
+                        <ul class="footer__list">
+                          <li class="footer__item">
+                            <a href="/" class="footer__link">
+                              Home
+                            </a>
+                          </li>
+                          <li class="footer__item">
+                            <a href="/giveaways" class="footer__link">
+                              Giveaways
+                            </a>
+                          </li>
+                          <li class="footer__item">
+                            <a href="/promotions" class="footer__link">
+                              Promotions
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="footer__copyright">
+                        Built with{" "}
+                        <a href="" class="footer__link">
+                          love
+                        </a>{" "}
+                        for all of the{" "}
+                        <a href="#" class="footer__link">
+                          Indie Games, developers, and geeks{" "}
+                        </a>{" "}
+                        out there. Copyright @ 2019 Loot Vault Inc.
+                      </p>
+                    </div>
+                  </div>
+                </footer>
               </>
             )}
           />
