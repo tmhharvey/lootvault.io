@@ -1,7 +1,7 @@
 // COLORS
-$color-primary: #ec7b1c;
-$color-primary-light: lightnen(#ec7b1c, 10%);
-$color-primary-dark: darken(#ec7b1c, 10%);
+$color-primary: #378078;
+$color-primary-light: lighten($color-primary, 10%);
+$color-primary-dark: darken($color-primary, 10%);
 
 $color-secondary: #34b75c;
 $color-secondary-light: #3edd6e;
@@ -24,7 +24,7 @@ $default-font-family: Lato, sans-serif;
 
 //MISC.
 
-$default-border-radius: 20px;
+$default-border-radius: 10px;
 
 .negative {
   color: $color-primary;
